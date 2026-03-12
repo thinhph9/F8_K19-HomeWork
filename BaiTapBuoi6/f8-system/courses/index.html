@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoursesPage</title>
+    <link rel="stylesheet" href="../css/base.css">
+
+    <!-- internal css -->
+    <style>
+        h1 {
+            color: black;
+        }
+
+        .section {
+            background-color: aqua;
+        }
+
+        p {
+            color: burlywood;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>COURSES PAGE</h1>
+    <!--
+    Phần tử này có: tag(h1)
+    Selector thắng: h1
+    Màu hiển thị: black 
+    Vì mặc dù đã có link External CSS nhưng bên dưới có thẻ <style> để Internal CSS nên là Internal sẽ được ưu tiên và Override
+    -->
+    <h2 class="title">Danh sach khoa hoc</h2>
+    <!-- 
+    Phần tử này có: tag(h2) + class(.title)
+    Selector thắng: .title
+    Vì: độ ưu tiên cửa .title cao hơn h2
+    Màu hiển thị: violet
+    -->
+    <div class="section">
+        <!-- 
+    Phần tử này có: tag(div) + class(.section)
+    Selector thắng: .section
+    Vì: độ ưu tiên cửa .section cao hơn div
+    Màu hiển thị: màu nền aqua
+    -->
+        <p class="highlight">HTML co ban</p>
+        <p class="highlight">CSS co ban</p>
+        <p class="highlight">Javascript nang cao</p>
+        <p class="highlight">ReactJS</p>
+        <p class="highlight">NodeJS</p>
+        <!-- 
+    Phần tử này có: tag(p) + class(.highlight)
+    Selector thắng: .highlight
+    Vì: độ ưu tiên của .highlight cao hơn p
+    Màu hiển thị: rgb(243, 243, 44)
+    -->
+    </div>
+</body>
+
+</html>

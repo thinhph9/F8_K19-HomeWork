@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/theme.css">
+</head>
+
+<body>
+    <h1 class="title" id="main">HOME PAGE</h1>
+    <!--
+    Phần tử này có: tag(h1) + class(.title) + id(#main)
+    Selector thắng: #main 
+    Vì độ ưu tiên của #main cao hơn h1 và .title
+    Màu hiển thị: orange
+    -->
+
+    <!-- h2 bị override bởi theme.css khi cùng selector .title -->
+    <h2 class="title">Gioi thieu he thong</h2>
+    <!--
+    Phần tử này có: tag(h2) + class(.title)
+    Selector thắng: .title 
+    Vì độ ưu tiên của .title cao hơn h2
+    Màu hiển thị: red vì: có hai file External CSS được link và có cùng selector là .title thì file thứ 2 theme.css sẽ được áp dụng
+    -->
+    <h3 class="section">Cac khoa hoc noi bat</h3>
+    <!-- 
+    Phần tử này có: tag(h3) + class(.section)
+    Selector thắng: .section
+    Vì độ ưu tiên của .section cao hơn h3
+    Màu hiển thị: brown
+    -->
+    <div>
+        <p>HTML</p>
+        <p>CSS</p>
+        <p>Javascript</p>
+        <p>Python</p>
+        <!-- 
+        Các phần tử này có: tag(p)
+        Selector thắng: p
+        Màu hiển thị: black
+        -->
+    </div>
+</body>
+
+</html>
