@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrdersPage</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/theme.css">
+</head>
+
+<body>
+    <h1 style="color: lawngreen;">ORDERS PAGE</h1>
+    <!-- 
+    Phần tử này có: tag(h1) + inline style
+    Màu hiển thị: lawngreen
+    Vì độ ưu tiên của inline style cao hơn tag(h1)
+    -->
+    <h2 class="title" id="special" style="color: gray;">Danh sach don hang</h2>
+    <!-- 
+    Phần tử này có: tag(h2) + class(.title) + id(#special) + inline style
+    Selector thắng: inline style
+    Vì độ ưu tiên của inline style cao hơn h2, .title, #special
+    Màu hiển thị: gray
+    -->
+    <p style="color: aqua;">Don hang 001</p>
+    <!-- 
+    Phần tử này có: tag(p) + inline style
+    Màu hiển thị: aqua
+    Vì độ ưu tiên của inline style cao hơn tag(p)
+    -->
+    <p>Don hang 002</p>
+    <p class="highlight">Don hang 003</p>
+    <p class="highlight">Don hang 004</p>
+</body>
+
+</html>

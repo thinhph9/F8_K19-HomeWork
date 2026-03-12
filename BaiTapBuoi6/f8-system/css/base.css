@@ -20,6 +20,7 @@ p {
 
 .section {
     color: brown;
+    background-color: rgb(18, 53, 53);
 }
 
 .highlight {
@@ -28,10 +29,12 @@ p {
 
 .big {
     color: olive;
+    /* background-color: aqua; */
 }
 
 #main {
     color: orange;
+    background-color: rgb(18, 87, 5);
 }
 
 #special {

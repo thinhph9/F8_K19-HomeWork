@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashboardPage</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <style>
+        .big {
+            background-color: grey;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 class="title" id="special" style="color: lawngreen;">DASHBOARD</h1>
+    <!-- 
+    Phần tử này có: tag(h1) + class(.title) + id(#special) + inline style 
+    Selector thắng: inline style
+    Vì độ ưu tiên của inline style cao hơn h1, .title, #special 
+    Màu hiển thị: lawngreen
+    -->
+
+    <h2 class="section">Tong quan he thong</h2>
+    <!-- 
+    Phần tử này có: tag(h2) + class(.section)
+    Selector thắng: .section
+    Vì độ ưu tiên của .section cao hơn h2
+    Màu hiển thị: Màu nền là rgb(18, 53, 53), màu chữ là brown
+    -->
+
+    <div class="big">
+        <!-- 
+    Phần tử này có: tag(div) + class(.big)
+    Màu hiển thị: Màu nền grey
+    Vì có độ ưu tiên là .big, giải thích thêm: Có hai file External được link, và Internal style thì .big sẽ được áp dụng css ở Internal style    
+    -->
+        <h3 class="title">Courses</h3>
+        <!-- 
+    Phần tử này có: tag(h3) + class(.title)
+    Selector thắng: .title
+    Vì độ ưu tiên của .title hơn h3. Giải thích thêm: có hai file External được link, .title ở file thứ hai theme.css sẽ được áp dụng
+    Màu hiển thị: red
+    -->
+        <p class="highlight">Tong quan Courses</p>
+        <!-- 
+    Phần tử này có: tag(p) + class(.highlight)
+    Selector thắng: .highlight
+    Vì độ ưu tiên của .highlight hơn p
+    Màu hiển thị: (243, 243, 44)   
+    -->
+        <h3 class="title">Students</h3>
+        <p class="highlight">Tong quan Students</p>
+        <h3 class="title">Teachers</h3>
+        <p class="highlight">Tong quan Teachers</p>
+        <h3 class="title">Orders</h3>
+        <p class="highlight">Tong quan Orders</p>
+        <h3 class="title">Reports</h3>
+        <p class="highlight">Tong quan Reports</p>
+    </div>
+
+</body>
+
+</html>

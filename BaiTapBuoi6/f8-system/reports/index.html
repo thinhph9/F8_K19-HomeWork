@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReportsPage</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/theme.css">
+</head>
+
+<body>
+    <h1>REPORT PAGE</h1>
+    <h2 class="title">Thong ke he thong</h2>
+    <!-- 
+    Phần tử này có: tag(h2) + class(.title)
+    Selector thắng: .title
+    Vì 2 file External được link nên file link sau theme.css sẽ được áp dụng .title
+    Màu hiển thị: red
+    -->
+    <div class="section" id="main">
+        <!--    
+    Phần tử này có: tag(div) + class(.section) + id(#main)
+    Selector thắng: #main 
+    Vì độ ưu tiên cao hơn div, .section
+    Màu nền hiển thị: rgb(18, 87, 5)
+    -->
+        <p class="title">Tong so hoc vien</p>
+        <!-- 
+    Phần tử này có: tag(p) + class(.title)
+    Selector thắng: .title
+    Vì 2 file External được link nên file link sau theme.css sẽ được áp dụng .title
+    Màu hiển thị: red
+    -->
+        <p class="big">Tong so khoa hoc</p>
+        <p>Tong so don hang</p>
+        <p class="highlight">Doanh thu</p>
+    </div>
+</body>
+
+</html>
