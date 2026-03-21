@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: 16px;
+}
+
+.layout {
+    background-color: #eee;
+    min-height: 100vh;
+}
+
+.control-panel,
+.preview-area {
+    display: inline-block;
+    min-height: 100vh;
+    vertical-align: top;
+}
+
+.control-panel {
+    width: 30%;
+    background-color: white;
+    margin: 20px 20px;
+}
+
+.preview-area {
+    width: 60%
+}
+
+.layout .control-panel ol {
+    padding: 0px 10px 10px 50px;
+}
+
+.control-title {
+    padding: 10px 20px;
+}
+
+.control-panel li {
+    margin-top: 10px;
+}
+
+.control-panel button {
+    border-style: none;
+    font-size: inherit;
+    padding: 0.2em 0.6em;
+    margin-left: 5px;
+    margin-top: 8px;
+    background-color: #ddd;
+
+}
+
+.control-panel label {
+    cursor: pointer;
+}
+
+.preview-title {
+    padding: 10px 20px;
+}
+
+.profile-card {
+    width: 100%;
+    min-height: 100vh;
+    padding: 2em 2em;
+    margin-left: 20px;
+}
+
+.profile-name {
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.skill-list {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.skill-tag {
+    padding: 0.3rem 0.3rem;
+    background-color: #f0f0f0;
+}
+
+.btn-contact {
+    border-style: none;
+    font-size: inherit;
+    padding: 0.2em 0.6em;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/*  Màu nền hồ sơ */
+#bg-light:checked~.preview-area .profile-card {
+    background: white;
+}
+
+#bg-gray:checked~.preview-area .profile-card {
+    background-color: lightgray;
+}
+
+#bg-yellow:checked~.preview-area .profile-card {
+    background-color: lightyellow;
+}
+
+#bg-blue:checked~.preview-area .profile-card {
+    background-color: lightblue;
+}
+
+#bg-pink:checked~.preview-area .profile-card {
+    background-color: pink;
+}
+
+/* Kích thước tên */
+#name-small:checked~.preview-area .profile-card .profile-name {
+    font-size: 0.8rem;
+}
+
+#name-medium:checked~.preview-area .profile-card .profile-name {
+    font-size: 1rem;
+}
+
+#name-large:checked~.preview-area .profile-card .profile-name {
+    font-size: 2.75rem;
+}
+
+/* Kiểu chữ tên */
+#name-normal:checked~.preview-area .profile-card .profile-name {
+    text-transform: none;
+}
+
+#name-uppercase:checked~.preview-area .profile-card .profile-name {
+    text-transform: uppercase;
+}
+
+/* Màu chữ tên */
+#name-dark:checked~.preview-area .profile-card .profile-name {
+    color: #121212;
+}
+
+#name-blue:checked~.preview-area .profile-card .profile-name {
+    color: blue;
+}
+
+#name-green:checked~.preview-area .profile-card .profile-name {
+    color: green;
+}
+
+#name-red:checked~.preview-area .profile-card .profile-name {
+    color: red;
+}
+
+/* Căn lề hồ sơ */
+#align-left:checked~.preview-area .profile-card {
+    text-align: left;
+}
+
+#align-center:checked~.preview-area .profile-card {
+    text-align: center;
+}
+
+#align-right:checked~.preview-area .profile-card {
+    text-align: right;
+}
+
+/* Kích thước nghề nghiệp */
+#job-small:checked~.preview-area .profile-card .profile-job {
+    font-size: 0.8rem;
+}
+
+#job-medium:checked~.preview-area .profile-card .profile-job {
+    font-size: 1rem;
+}
+
+#job-large:checked~.preview-area .profile-card .profile-job {
+    font-size: 1.3rem;
+}
+
+/* Khoảng cách chữ nghề nghiệp */
+#job-tight:checked~.preview-area .profile-card .profile-job {
+    letter-spacing: -0.03em;
+}
+
+#job-normal:checked~.preview-area .profile-card .profile-job {
+    letter-spacing: 0.02em;
+}
+
+#job-wide:checked~.preview-area .profile-card .profile-job {
+    letter-spacing: 0.18em;
+}
+
+/* Kích thước mô tả */
+#desc-small:checked~.preview-area .profile-card .profile-desc {
+    font-size: 0.9rem;
+}
+
+#desc-medium:checked~.preview-area .profile-card .profile-desc {
+    font-size: 1rem;
+}
+
+#desc-large:checked~.preview-area .profile-card .profile-desc {
+    font-size: 1.125rem;
+}
+
+/* Giãn dòng mô tả */
+
+#desc-tight:checked~.preview-area .profile-card .profile-desc {
+    line-height: 1.2;
+}
+
+#desc-normal:checked~.preview-area .profile-card .profile-desc {
+    line-height: 1.5;
+}
+
+#desc-loose:checked~.preview-area .profile-card .profile-desc {
+    line-height: 1.8;
+}
+
+/* Màu nút liên hệ */
+#btn-dark:checked~.preview-area .profile-card .btn-contact {
+    background-color: #121212;
+    color: white;
+}
+
+#btn-blue:checked~.preview-area .profile-card .btn-contact {
+    background-color: blue;
+    color: white;
+}
+
+#btn-light:checked~.preview-area .profile-card .btn-contact {
+    background-color: lightgray;
+    color: white;
+}
+
+/* text trong button khi checked */
+#bg-light:checked~.control-panel label[for="bg-light"],
+#bg-gray:checked~.control-panel label[for="bg-gray"],
+#bg-yellow:checked~.control-panel label[for="bg-yellow"],
+#bg-blue:checked~.control-panel label[for="bg-blue"],
+#bg-pink:checked~.control-panel label[for="bg-pink"],
+
+#name-small:checked~.control-panel label[for="name-small"],
+#name-medium:checked~.control-panel label[for="name-medium"],
+#name-large:checked~.control-panel label[for="name-large"],
+
+#name-normal:checked~.control-panel label[for="name-normal"],
+#name-uppercase:checked~.control-panel label[for="name-uppercase"],
+
+#name-dark:checked~.control-panel label[for="name-dark"],
+#name-blue:checked~.control-panel label[for="name-blue"],
+#name-green:checked~.control-panel label[for="name-green"],
+#name-red:checked~.control-panel label[for="name-red"],
+
+#align-left:checked~.control-panel label[for="align-left"],
+#align-center:checked~.control-panel label[for="align-center"],
+#align-right:checked~.control-panel label[for="align-right"],
+
+#job-small:checked~.control-panel label[for="job-small"],
+#job-medium:checked~.control-panel label[for="job-medium"],
+#job-large:checked~.control-panel label[for="job-large"],
+
+#job-tight:checked~.control-panel label[for="job-tight"],
+#job-normal:checked~.control-panel label[for="job-normal"],
+#job-wide:checked~.control-panel label[for="job-wide"],
+
+#desc-small:checked~.control-panel label[for="desc-small"],
+#desc-medium:checked~.control-panel label[for="desc-medium"],
+#desc-large:checked~.control-panel label[for="desc-large"],
+
+#desc-tight:checked~.control-panel label[for="desc-tight"],
+#desc-normal:checked~.control-panel label[for="desc-normal"],
+#desc-loose:checked~.control-panel label[for="desc-loose"],
+
+#btn-dark:checked~.control-panel label[for="btn-dark"],
+#btn-blue:checked~.control-panel label[for="btn-blue"],
+#btn-light:checked~.control-panel label[for="btn-light"] {
+    font-weight: bold;
+}
