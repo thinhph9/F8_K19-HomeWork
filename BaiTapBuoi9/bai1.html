@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .layout {
+            margin-top: 20px;
+        }
+
+        .square,
+        .rectangle,
+        .triangle-up,
+        .triangle-down,
+        .triangle-left,
+        .triangle-right,
+        .trapezium,
+        .triangle-wide,
+        .triangle-acute,
+        .triangle-isosceles,
+        .arrow-right,
+        .arrow-left,
+        .ribbon,
+        .letter-F,
+        .letter-8 {
+            display: inline-block;
+            margin-left: 40px;
+            margin-bottom: 40px;
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            border: 4px solid orange;
+        }
+
+        .rectangle {
+            width: 200px;
+            height: 100px;
+            border: 4px solid blue;
+        }
+
+        .triangle-up {
+            border-right: 50px solid transparent;
+            border-bottom: 100px solid #6dc978;
+            border-left: 50px solid transparent;
+        }
+
+        .triangle-down {
+            border-top: 100px solid #e3a031;
+            border-right: 50px solid transparent;
+            border-left: 50px solid transparent;
+        }
+
+        .triangle-left {
+            border-top: 50px solid transparent;
+            border-right: 100px solid #905cb2;
+            border-bottom: 50px solid transparent;
+        }
+
+        .triangle-right {
+            border-top: 50px solid transparent;
+            border-left: 100px solid peru;
+            border-bottom: 50px solid transparent;
+        }
+
+        .trapezium {
+            width: 150px;
+            border-right: 30px solid transparent;
+            border-bottom: 90px solid #61b99d;
+            border-left: 30px solid transparent;
+        }
+
+        .triangle-wide {
+            border-right: 80px solid transparent;
+            border-bottom: 100px solid #1a2029;
+            border-left: 80px solid transparent;
+        }
+
+        .triangle-acute {
+            border-right: 20px solid transparent;
+            border-bottom: 100px solid #ad4430;
+            border-left: 20px solid transparent;
+        }
+
+        .triangle-isosceles {
+            border-right: 50px solid transparent;
+            border-bottom: 100px solid rgb(51, 80, 8);
+            border-left: 50px solid transparent;
+        }
+
+        .arrow-right {
+            border-top: 50px solid transparent;
+            border-left: 100px solid peru;
+            border-right: 100px solid transparent;
+            border-bottom: 50px solid transparent;
+        }
+
+        .arrow-left {
+            border-top: 50px solid transparent;
+            border-left: 100px solid transparent;
+            border-right: 100px solid #905cb2;
+            border-bottom: 50px solid transparent;
+        }
+
+        .ribbon {
+            width: 200px;
+            height: 100px;
+            background-color: brown;
+            border-top: 50px solid transparent;
+            border-left: 100px solid transparent;
+            border-right: 80px solid white;
+            border-bottom: 50px solid transparent;
+        }
+
+        .box1,
+        .box2,
+        .box3,
+        .box4 {
+            width: 100px;
+            height: 100px;
+        }
+
+        .box1 {
+            border-top: 20px solid orangered;
+            border-left: 20px solid orangered;
+            border-bottom: 10px solid orangered;
+        }
+
+        .box2 {
+            border-top: 10px solid orangered;
+            border-left: 20px solid orangered;
+        }
+
+        .box3,
+        .box4 {
+            border-left: 20px solid orangered;
+            border-right: 20px solid orangered;
+        }
+
+        .box3 {
+            border-top: 20px solid orangered;
+            border-bottom: 10px solid orangered;
+        }
+
+        .box4 {
+            border-top: 10px solid orangered;
+            border-bottom: 20px solid orangered;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+        <!-- Hình vuông -->
+        <div class="square"></div>
+        <!-- Hình chữ nhật -->
+        <div class="rectangle"></div>
+        <!-- Tam giác lên -->
+        <div class="triangle-up"></div>
+        <!-- Tam giác xuống -->
+        <div class="triangle-down"></div>
+        <!-- Tam giác trái -->
+        <div class="triangle-left"></div>
+        <!-- Tam giác phải -->
+        <div class="triangle-right"></div>
+        <!-- Hình thang -->
+        <div class="trapezium"></div>
+        <!-- Tam giác rộng -->
+        <div class="triangle-wide"></div>
+        <!-- Tam giác nhọn -->
+        <div class="triangle-acute"></div>
+        <!-- Tam giác cân -->
+        <div class="triangle-isosceles"></div>
+        <!-- Mũi tên phải -->
+        <div class="arrow-right"></div>
+        <!-- Mũi tên trái -->
+        <div class="arrow-left"></div>
+        <!-- Ribbon -->
+        <div class="ribbon"></div>
+        <!-- F8 -->
+        <div class="F8">
+            <div class="letter-F">
+                <div class="box1"></div>
+                <div class="box2"></div>
+            </div>
+            <div class="letter-8">
+                <div class="box3"></div>
+                <div class="box4"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
