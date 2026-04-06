@@ -1,0 +1,56 @@
+.container {
+    height: 100vh;
+    width: 100%;
+    background-color: gray;
+    display: flex;
+}
+
+.strip {
+    width: 20%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.strip:hover .strip__title {
+    opacity: 0;
+}
+
+.strip img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.strip:hover img {
+    opacity: 1;
+}
+
+.strip:hover {
+    width: 100%;
+    background-color: transparent;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+}
+
+.strip:hover .overlay {
+    opacity: 1;
+}
