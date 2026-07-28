@@ -1,0 +1,69 @@
+/* reset css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    max-width: 1200px;
+    background-color: aqua;
+    border: 1px solid #dddddd;
+    padding: 8px 0;
+    margin: 0 auto;
+}
+
+nav {
+    /* căn giữa ngang header */
+    text-align: center;
+}
+
+.logo,
+.menu {
+    display: inline-block;
+    /* căn giữa theo chiều dọc */
+    vertical-align: middle;
+}
+
+.logo img {
+    height: 38px;
+    margin-right: 25px;
+}
+
+.sub-menu-1,
+.sub-menu-2 {
+    display: none;
+    /* position: absolute; */
+}
+
+.menu-item {
+    display: inline;
+    list-style: none;
+}
+
+.sub-menu-main {
+    margin-right: 25px;
+    position: relative;
+}
+
+.sub-menu-main>a {
+    font-weight: bold;
+    color: #333333;
+    padding: 6px 0px;
+    text-decoration: none;
+}
+
+.sub-menu-main>a:hover {
+    color: #d62828;
+    border-bottom: 2px solid #d62828;
+}
+
+
+
+.sub-menu-main:hover>.sub-menu-1 {
+    /* display: block; */
+}

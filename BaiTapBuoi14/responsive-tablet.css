@@ -1,11 +1,13 @@
-@media (min-width: 768px) {
+@media (min-width: 481px) and (max-width: 768px) {
   .header {
-    background-color: #3a3a3a;
+    background-color: #e73838;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+
+    position: relative;
   }
 
   .header__logo {
@@ -15,6 +17,10 @@
   }
 
   .header__nav {
+    /* display: none; */
+    position: absolute;
+    top: 100%;
+    right: 0;
   }
 
   .header__nav ul {
@@ -27,14 +33,19 @@
   }
 
   .header__hamburger {
-    display: none;
+    display: block;
+    font-size: 2rem;
+  }
+
+  #menu-toggle:checked ~ .header__nav {
+    /* max-height: 500px; */
   }
 
   .container {
     max-width: 1400px;
     margin: 2.4rem auto;
     display: flex;
-    padding: 1.5rem;
+    padding: 1rem;
     gap: 1.5rem;
   }
 
@@ -64,7 +75,7 @@
 
   .card {
     border: 0.3rem solid black;
-    width: calc((100% - 2rem) / 3);
+    width: calc((100% - 1rem) / 2);
   }
 
   .card__header {
@@ -80,7 +91,7 @@
   }
 
   .container__sidebar {
-    width: 30rem;
+    width: 25rem;
     min-height: 40rem;
     background-color: #3a3a3a;
     padding: 1.6rem 2rem 1.6rem 1.6rem;

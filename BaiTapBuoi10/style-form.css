@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #2d2a4a;
+    font-size: 1rem;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+.modal {
+    width: 40rem;
+    margin: 4rem auto;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 1rem;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.sub {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.field {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.input-wrap {
+    position: relative;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.5rem;
+    outline: none;
+}
+
+/* CHECKBOX */
+.checkbox-item {
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.checkbox-item input {
+    display: inline-block;
+}
+
+.checkbox-item span {
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+
+/* TOOLTIP */
+.tooltip {
+    position: absolute;
+    left: 0;
+    bottom: 2.5rem;
+    background: #1e293b;
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    font-size: 0.9rem;
+
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+}
+
+/* mũi tên */
+.tooltip::after {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    top: 100%;
+    border: 0.5rem solid transparent;
+    border-top: 0.5rem solid #1e293b;
+}
+
+/* SHOW TOOLTIP */
+.input-wrap:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.checkbox-item:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* BUTTON */
+.btn {
+    width: 100%;
+    padding: 1rem;
+    background: #7c3aed;
+    color: #fff;
+    border: none;
+    border-radius: 2rem;
+    text-align: center;
+    cursor: pointer;
+}

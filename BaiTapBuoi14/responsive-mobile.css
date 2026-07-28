@@ -1,0 +1,12 @@
+@media (max-width: 480px) {
+  .header {
+    background-color: #1ee417;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+
+    position: relative;
+  }
+}
