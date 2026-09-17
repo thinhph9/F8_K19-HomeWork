@@ -1,0 +1,8 @@
+services:
+  react-docker-app:
+    build: .
+    ports:
+      - "3000:5173"
+    volumes:
+      - ./:/react-docker-app
+      - /react-docker-app/node_modules
