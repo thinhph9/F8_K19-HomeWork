@@ -1,0 +1,12 @@
+services:
+  database:
+    container_name: f8-k19-docker-db
+    image: postgres:17
+    ports:
+      - "4000:5432"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: manager_customers
+    volumes:
+      - ~/database/postgres-data:/var/lib/postgresql/data
