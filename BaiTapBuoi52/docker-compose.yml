@@ -2,7 +2,7 @@ services:
   api-btb52:
     container_name: k19-btb52
 
-    image: node:24-bookworm-slim
+    image: node:25
 
     working_dir: /app/api-btb52
 
