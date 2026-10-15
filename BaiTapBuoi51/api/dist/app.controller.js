@@ -22,10 +22,10 @@ __decorate([
     Get(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", String)
+    __metadata("design:returntype", void 0)
 ], AppController.prototype, "getHello", null);
 AppController = __decorate([
-    Controller(),
+    Controller("app"),
     __metadata("design:paramtypes", [AppService])
 ], AppController);
 export { AppController };
