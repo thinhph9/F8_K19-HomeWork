@@ -1,0 +1,10 @@
+services:
+  api-btb53:
+    container_name: k19-btb53
+    image: node:25
+    working_dir: /app/api-btb53
+    volumes:
+      - ./api-btb53:/app/api-btb53
+    ports:
+      - 3001:3000
+    command: [ 'npm', 'run', 'start:dev' ]
