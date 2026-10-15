@@ -1,0 +1,14 @@
+services:
+  api-btb52:
+    container_name: k19-btb52
+
+    image: node:24-bookworm-slim
+
+    working_dir: /app/api-btb52
+
+    volumes:
+      - ./api-btb52:/app/api-btb52
+    ports:
+      - 3000:3000
+
+    command: [ "npm", "run", "start:dev" ]
