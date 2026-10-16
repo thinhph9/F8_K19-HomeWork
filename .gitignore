@@ -24,3 +24,6 @@ Thumbs.db
 
 # VS Code local settings (optional)
 .vscode/
+
+# TypeScript build info
+*.tsbuildinfo
