@@ -6,8 +6,6 @@ export class CategoryController {
 
     constructor(private readonly categogyService: CategoryService) { }
 
-
-
     @Get()
     getCategories() {
         return [
@@ -17,6 +15,14 @@ export class CategoryController {
             },
             {
                 id: 2,
+                name: "AAT"
+            },
+            {
+                id: 3,
+                name: "KT"
+            },
+            {
+                id: 4,
                 name: "AAT"
             }
         ]
