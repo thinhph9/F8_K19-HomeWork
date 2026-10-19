@@ -50,7 +50,7 @@ export class CategoryService {
         this.categories.splice(index, 1);
     }
 
-    update(id: number, categoryDto: CategoryUpdateDto): CategoryDto {
+    update(id: number, dto: CategoryUpdateDto): CategoryDto {
         const index = this.categories.findIndex(c => c.id === id);
         if (index === -1) {
             throw new NotFoundException(`Category với ID ${id} không tồn tại`);
@@ -59,7 +59,7 @@ export class CategoryService {
         // Trộn các giá trị gửi lên vào object hiện tại
         const updatedCategory: CategoryDto = {
             ...this.categories[index],
-            ...categoryDto,
+            ...dto,
         };
 
         this.categories[index] = updatedCategory;
