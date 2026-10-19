@@ -1,74 +1,33 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from "@nestjs/common";
+import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Patch, Post, Put } from "@nestjs/common";
 import { CategoryService } from "./services.js";
-import { CategoryBaseDto, CategoryCreateDto, CategoryDto, CategoryReplaceDto } from "./dto.js";
-import { ApiResponse } from "@nestjs/swagger";
+import { CategoryCreateDto, CategoryDto, CategoryReplaceDto, CategoryUpdateDto } from "./dto.js";
+import { ApiOperation, ApiResponse, ApiTags } from "@nestjs/swagger";
 
+/**Thêm apitags */
+@ApiTags("Categories")
 @Controller("categories")
 export class CategoryController {
 
-    constructor(private readonly categogyService: CategoryService) { }
+    constructor(private readonly categoryService: CategoryService) { }
 
     @Get()
+    /**Thêm thông tin ghi chú cho api*/
+    @ApiOperation({ summary: "Lấy danh sách tất cả các danh mục" })
     @ApiResponse({
-        status: 201,
-        description: 'The record has been GET ALL successfully.',
+        status: HttpStatus.OK, /** Dùng HttpStatus thay vì fix cứng số */
+        description: "Lấy danh sách thành công.",
         type: CategoryDto,
         isArray: true
 
     })
-    getCategories() {
-        return this.categogyService.getList();
+    /**Thêm kiểu dữ liệu */
+    getCategories(): CategoryDto[] {
+        return this.categoryService.getList();
     }
 
-    @Get(":id")
-    @ApiResponse({
-        status: 200,
-        description: 'The record has been GET ONE successfully.',
-        type: CategoryDto,
-
-    })
-    getCategory(@Param("id") id: number) {
-        return this.categogyService.getById(id);
-    }
-
-
-    @Post()
-    @ApiResponse({
-        status: 200,
-        description: 'The record has been successfully created.',
-        type: CategoryDto
-
-    })
-    createCategory(@Body() category: CategoryCreateDto) {
-        console.log(category)
-        return this.categogyService.create(category)
-    }
-
-    @Put(":id")
-    @ApiResponse({
-        status: 200,
-        description: 'The record has been REPLACE successfully.',
-        type: CategoryDto,
-
-    })
-    replaceCategory(@Param("id") id: number,
-        @Body() category: CategoryReplaceDto) {
-        return this.categogyService.create(category);
-    }
-
-    @Delete(":id")
-    @ApiResponse({
-        status: 200,
-        description: 'The record has been DELETE successfully.'
-    })
-    deleteCategory(@Param("id") id: number) {
-        // return this.categogyService.create(category);
-    }
-
-
-
-
+    // Đặt route tĩnh "v2" lên trước route động ":id"
     @Get("v2")
+    @ApiOperation({ summary: "Lấy danh sách v2" })
     getCategories2() {
         return [
             {
@@ -81,6 +40,75 @@ export class CategoryController {
             }
         ]
     }
+
+    @Get(":id")
+    @ApiOperation({ summary: "Lấy chi tiết danh mục theo ID" })
+    @ApiResponse({
+        status: HttpStatus.OK,
+        description: "Tìm thấy bản ghi",
+        type: CategoryDto
+    })
+    @ApiResponse({
+        status: HttpStatus.NOT_FOUND,
+        description: "Không tìm thấy danh mục"
+    })
+    getCategory(@Param("id", ParseIntPipe) id: number): CategoryDto {
+        return this.categoryService.getById(id);
+    }
+
+
+    @Post()
+    @ApiOperation({ summary: "Tạo mới danh mục" })
+    @ApiResponse({
+        status: HttpStatus.CREATED,
+        description: "Tạo thành công",
+        type: CategoryDto
+
+    })
+    createCategory(@Body() category: CategoryCreateDto): CategoryDto {
+        return this.categoryService.create(category)
+    }
+
+    @Put(":id")
+    @ApiOperation({ summary: "Cập nhật danh mục theo ID" })
+    @ApiResponse({
+        status: HttpStatus.OK,
+        description: "Cập nhật thành công.",
+        type: CategoryDto
+
+    })
+    replaceCategory(@Param("id", ParseIntPipe) id: number,
+        @Body() category: CategoryReplaceDto): CategoryDto {
+        return this.categoryService.replace(id, category);
+    }
+
+    @Delete(":id")
+    @HttpCode(HttpStatus.NO_CONTENT)
+    @ApiOperation({ summary: "Xóa danh mục theo ID" })
+    @ApiResponse({
+        status: HttpStatus.NO_CONTENT,
+        description: "Xóa thành công."
+    })
+    deleteCategory(@Param("id", ParseIntPipe) id: number): void {
+        this.categoryService.delete(id);
+    }
+
+    @Patch(":id")
+    @ApiResponse({
+        status: HttpStatus.OK,
+        description: 'Cập nhật một phần danh mục thành công.',
+        type: CategoryDto,
+    })
+    @ApiResponse({ status: HttpStatus.NOT_FOUND, description: 'Không tìm thấy danh mục.' })
+    updateCategory(
+        @Param("id", ParseIntPipe) id: number,
+        @Body() categoryDto: CategoryUpdateDto
+    ): CategoryDto {
+        return this.categoryService.update(id, categoryDto);
+    }
+
+
+
 
 }
 
