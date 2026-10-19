@@ -73,9 +73,13 @@ export class CategoryController {
     @ApiOperation({ summary: "Cập nhật danh mục theo ID" })
     @ApiResponse({
         status: HttpStatus.OK,
-        description: "Cập nhật thành công.",
+        description: "Cập nhật danh mục thành công.",
         type: CategoryDto
 
+    })
+    @ApiResponse({
+        status: HttpStatus.NOT_FOUND,
+        description: "Không tìm thấy danh mục"
     })
     replaceCategory(@Param("id", ParseIntPipe) id: number,
         @Body() category: CategoryReplaceDto): CategoryDto {
@@ -94,6 +98,7 @@ export class CategoryController {
     }
 
     @Patch(":id")
+    @ApiOperation({ summary: "Cập nhật một phần danh mục theo ID" })
     @ApiResponse({
         status: HttpStatus.OK,
         description: 'Cập nhật một phần danh mục thành công.',
@@ -102,8 +107,7 @@ export class CategoryController {
     @ApiResponse({ status: HttpStatus.NOT_FOUND, description: 'Không tìm thấy danh mục.' })
     updateCategory(
         @Param("id", ParseIntPipe) id: number,
-        @Body() categoryDto: CategoryUpdateDto
-    ): CategoryDto {
+        @Body() categoryDto: CategoryUpdateDto): CategoryDto {
         return this.categoryService.update(id, categoryDto);
     }
 

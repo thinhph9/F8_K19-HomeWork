@@ -1,0 +1,309 @@
+{
+    "openapi": "3.0.0",
+    "paths": {
+        "/app": {
+            "get": {
+                "operationId": "AppController_getHello",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "App"
+                ]
+            }
+        },
+        "/categories": {
+            "get": {
+                "operationId": "CategoryController_getCategories",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Lấy danh sách thành công.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/CategoryDto"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "summary": "Lấy danh sách tất cả các danh mục",
+                "tags": [
+                    "Categories"
+                ]
+            },
+            "post": {
+                "operationId": "CategoryController_createCategory",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CategoryCreateDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Tạo thành công",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CategoryDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "summary": "Tạo mới danh mục",
+                "tags": [
+                    "Categories"
+                ]
+            }
+        },
+        "/categories/v2": {
+            "get": {
+                "operationId": "CategoryController_getCategories2",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                },
+                "summary": "Lấy danh sách v2",
+                "tags": [
+                    "Categories"
+                ]
+            }
+        },
+        "/categories/{id}": {
+            "get": {
+                "operationId": "CategoryController_getCategory",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Tìm thấy bản ghi",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CategoryDto"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Không tìm thấy danh mục"
+                    }
+                },
+                "summary": "Lấy chi tiết danh mục theo ID",
+                "tags": [
+                    "Categories"
+                ]
+            },
+            "put": {
+                "operationId": "CategoryController_replaceCategory",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CategoryReplaceDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Cập nhật danh mục thành công.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CategoryDto"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Không tìm thấy danh mục"
+                    }
+                },
+                "summary": "Cập nhật danh mục theo ID",
+                "tags": [
+                    "Categories"
+                ]
+            },
+            "delete": {
+                "operationId": "CategoryController_deleteCategory",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Xóa thành công."
+                    }
+                },
+                "summary": "Xóa danh mục theo ID",
+                "tags": [
+                    "Categories"
+                ]
+            },
+            "patch": {
+                "operationId": "CategoryController_updateCategory",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CategoryUpdateDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Cập nhật một phần danh mục thành công.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CategoryDto"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Không tìm thấy danh mục."
+                    }
+                },
+                "summary": "Cập nhật một phần danh mục theo ID",
+                "tags": [
+                    "Categories"
+                ]
+            }
+        }
+    },
+    "info": {
+        "title": "TopCV API",
+        "description": "The TopCV API description",
+        "version": "1.0",
+        "contact": {}
+    },
+    "tags": [
+        {
+            "name": "",
+            "description": ""
+        }
+    ],
+    "servers": [],
+    "components": {
+        "schemas": {
+            "CategoryDto": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "example": "Laptop",
+                        "description": "Tên danh mục sản phẩm",
+                        "minLength": 2,
+                        "maxLength": 100
+                    },
+                    "id": {
+                        "type": "number",
+                        "example": 1,
+                        "description": "ID định danh của danh mục"
+                    }
+                },
+                "required": [
+                    "name",
+                    "id"
+                ]
+            },
+            "CategoryCreateDto": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "example": "Laptop",
+                        "description": "Tên danh mục sản phẩm",
+                        "minLength": 2,
+                        "maxLength": 100
+                    }
+                },
+                "required": [
+                    "name"
+                ]
+            },
+            "CategoryReplaceDto": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "example": "Laptop",
+                        "description": "Tên danh mục sản phẩm",
+                        "minLength": 2,
+                        "maxLength": 100
+                    }
+                },
+                "required": [
+                    "name"
+                ]
+            },
+            "CategoryUpdateDto": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "example": "Laptop",
+                        "description": "Tên danh mục sản phẩm",
+                        "minLength": 2,
+                        "maxLength": 100
+                    }
+                }
+            }
+        }
+    }
+}
