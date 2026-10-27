@@ -8,3 +8,14 @@ services:
     ports:
       - 3000:3000
     command: [ "npm", "run", "start:dev" ]
+  db:
+    container_name: db-btb51
+    image: postgres:17
+    ports:
+      - "4000:5432"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: topcv
+    volumes:
+      - ~/database/postgres-data:/var/lib/postgresql/data
